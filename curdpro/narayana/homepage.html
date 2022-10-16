@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+{% include 'basanta.html' %}
+</head>
+<body>
+ <div class ="container-fluid">
+     <div class="row">
+         <div class ="col-md-12 ">
+             {% if students %}
+             <h1 class="text-center">NTH STUDENT INFORMATION</h1>
+           <table class="table table-bordered text-center">
+               <thead class="bg-success text-white">
+               <tr>
+                   <th>First Name</th>
+                   <th>Last Name</th>
+                   <th>Email ID</th>
+                   <th>Mobile</th>
+                   <th>Course</th>
+                   <th>loc</th>
+                   <th>A1</th>
+                   <th>A2</th>
+                   <th>A3</th>
+                   <th>A4</th>
+                   <th>Actions</th>
+               </tr>
+               </thead>
+               <tbody class="bg-dark text-white">
+               {% for student in students %}
+               <tr>
+                   <td>{{ student.first_name }}</td>
+                   <td>{{ student.last_name }}</td>
+                   <td>{{ student.email }}</td>
+                   <td>{{ student.mobile }}</td>
+                   <td>{{ student.course }}</td>
+                   <td>{{ student.location }}</td>
+                   <td>{{ student.assigment1 }}</td>
+                   <td>{{ student.assigment2 }}</td>
+                   <td>{{ student.assigment3 }}</td>
+                   <td>{{ student.assigment4 }}</td>
+                   <td>
+                       <a href="{% url 'update_data' student.id %}" class="btn btn-waring">Update</a>
+                       <a href="{% url 'delete_data' student.id %}" class="btn btn_danger">Delete</a>
+                   </td>
+               </tr>
+               {% endfor %}
+               </tbody>
+           </table>
+             {% else %}
+             <h2 class ="text-center">NO student information Avaailable</h2>
+             {% endif %}
+             <a href="{% url 'add_student' % " class="btn btn-outline-success">Add student</a>
+         </div>
+     </div>
+ </div>
+</body>
+</html>}
