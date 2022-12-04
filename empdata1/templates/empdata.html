@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    {% include 'cdn.html' %}
+</head>
+<body>
+<div clss="container-fluid">
+    <div class="row">
+        <div class=" col-md-8">
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+
+    <input type="submit" name="submit" class="btn btn-outline-success">
+    <input type="reset" name="clear" class="btn btn-outline-danger">
+
+          </div>
+
+      </div>
+
+    </div>
+</form>
+</body>
+</html>
