@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  {% include 'cdn.html'%}
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-2">
+      <form method="POST" action="{% url 'save_update_data' student.id %}">
+        {% csrf_token%}
+        <lable> Enter first name:</lable>
+        <input type="text" value="{{ student.first_name}}" name="fname" class="from-control">
+
+        <lable>Enter last name:</lable>
+        <input type="text" value="{{student.last_name}}" name="lname" class="from-control">
+
+        <lable>Enter Email id:</lable>
+        <input type="email" value="{{student.email}}" name="email" class="from-control">
+
+        <lable>Enter mobile no:</lable>
+        <input type="number" value="{{student.mobile}}" name="mobile" class="from-control">
+
+        <lable>Enter course name:</lable>
+        <input type="text" value="{{student.course}}" name="course" class="from-control">
+
+        <lable>Enter location:</lable>
+        <input type="text" value="{{student.location}}" name="loc" class="from-control">
+
+        <lable>enter assignment1 marks:</lable>
+        <input type="number" value="{{student.assignment1}}" name="a1" class="from-control">
+
+        <lable>enter assignment2 marks:</lable>
+        <input type="number" value="{{student.assignment2}}" name="a2" class="from-control">
+
+        <lable>enter assignment3 marks:</lable>
+        <input type="number" value="{{student.assignment3}}" name="a3" class="from-control">
+
+        <lable>enter assignment4 marks:</lable>
+        <input type="number" value="{{student.assignment4}}" name="a4" class="from-control">
+
+        <center>
+        <input type="submit" value="save" class="btn btn-success">
+        <input type="reset" value="clear" class="btn btn-outline-danger">
+        </center>
+
+      </form>
+
+    </div>
+  </div>
+</div >
+
+</body>
+</html>

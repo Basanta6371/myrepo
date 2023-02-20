@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{% static 'IMG_20170126_063915.jpg' %}" style="height:15%; width=100%; " >
+        </div>
+        <div>
+             <img src="{% static 'IMG_20170126_064106.jpg' %}" >
+        </div>
+        <div>
+            <img src="{% static 'IMG_20170126_064110.jpg' %}" >
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+</body>
+</html>

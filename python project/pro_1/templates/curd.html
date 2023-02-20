@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'cdn.html' %}
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+       {% if student %}
+        <h1 class="text-center">Nth Student Information</h1>
+         <table class="table table-bordered">
+            <thead class="btn-success">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Course</th>
+                <th>Loc</th>
+                <th>A1</th>
+                <th>A2</th>
+                <th>A3</th>
+                <th>A4</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+             <tbody class="text-center">
+             {% for student in student %}
+             <tr>
+                 <td>{{ student.first_name }}</td>
+                 <td>{{ student.last_name }}</td>
+                 <td>{{ student.email }}</td>
+                 <td>{{ student.mobile }}</td>
+                 <td>{{ student.course }}</td>
+                 <td>{{ student.location }}</td>
+                 <td>{{ student.assignment1 }}</td>
+                 <td>{{ student.assignment2 }}</td>
+                 <td>{{ student.assignment3 }}</td>
+                 <td>{{ student.assignment4 }}</td>
+                 <td>
+                     <a href="{% url 'update_data' student.id %}" class="btn btn-sm btn-success">Update</a>
+                     <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                 </td>
+
+             </tr>
+             {% endfor %}
+             </tbody>
+        </table>
+        {% else %}
+        <h1 class="text-center">No Student information avilable</h1>
+        {% endif %}
+        <a href="{% url 'add_student' %}" class="btn btn-outline-success">Add Student</a>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
